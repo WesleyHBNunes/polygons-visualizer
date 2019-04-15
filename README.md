@@ -16,6 +16,5 @@ return: Polygon()
 `
 ### plot_polygons
 `
-parameters: array_polygons (array of type Polygon, required), title (String, required)
+parameters: array_polygons (array of type Polygon, required), title (String, required), x_lim (Integer, required) y_lim (Integer, required)
 `
-
