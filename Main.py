@@ -6,7 +6,7 @@ from pyexcel_xls import get_data
 import Visualizer
 
 # CONSTS
-COLLUM_LINE_WIDTH_DATA = 3
+COLUMN_LINE_WIDTH_DATA = 3
 INITIAL_LINE_POINTS_DATA = 5
 
 
@@ -21,8 +21,8 @@ def random_polygons(n, title):
 
 def polygons_from_file_xls(file_name, sheet, title):
     data = get_data(file_name)
-    x_lim = data[sheet][COLLUM_LINE_WIDTH_DATA][COLLUM_LINE_WIDTH_DATA]
-    y_lim = data[sheet][COLLUM_LINE_WIDTH_DATA][COLLUM_LINE_WIDTH_DATA]
+    x_lim = data[sheet][COLUMN_LINE_WIDTH_DATA][COLUMN_LINE_WIDTH_DATA]
+    y_lim = data[sheet][COLUMN_LINE_WIDTH_DATA][COLUMN_LINE_WIDTH_DATA]
     array_polygons = []
     array_points_x = []
     array_points_y = []
