@@ -19,6 +19,25 @@ def random_polygons(n, title):
     Visualizer.plot_polygons(array_polygons, title, 1, 1)
 
 
+def polygons_from_file_txt(file_name, title):
+    file = open(file_name, "r")
+    line = file.readline()
+    while line != "#":
+        print(line)
+        if line == "QUANTITY":
+            file.readline()
+            amount_polygons = file.readline()
+            line = amount_polygons
+        elif line == "VERTICES (X,Y)":
+            line = file.readline()
+            while line != "\n":
+                points = line.split()
+                print(points)
+                line = file.readline()
+        else:
+            line = file.readline().strip()
+
+
 def polygons_from_file_xls(file_name, sheet, title):
     data = get_data(file_name)
     x_lim = data[sheet][COLUMN_LINE_WIDTH_DATA][COLUMN_LINE_WIDTH_DATA]
@@ -49,12 +68,13 @@ def main():
     # polygons_from_file_xls("Test/dighe.xls", "Dighe1", "Test of instance Dighe.xls")
     # polygons_from_file_xls("Test/dighe.xls", "Dighe2", "Test of instance Dighe.xls")
     # polygons_from_file_xls("Test/albano.xls", "Albano", "Test of instance Albano.xls")
-    polygons_from_file_xls("Test/fu.xls", "Fu", "Test of instance Fu.xls")
+    # polygons_from_file_xls("Test/fu.xls", "Fu", "Test of instance Fu.xls")
     # polygons_from_file_xls("Test/han.xls", "Han", "Test of instance Han.xls")
     # polygons_from_file_xls("Test/jakobs.xls", "Jakobs1", "Test of instance jakobs.xls")
     # polygons_from_file_xls("Test/jakobs.xls", "Jakobs2", "Test of instance jakobs.xls")
     # polygons_from_file_xls("Test/mao.xls", "Mao", "Test of instance mao.xls")
     # polygons_from_file_xls("Test/marques.xls", "Marques", "Test of instance marques.xls")
+    polygons_from_file_txt("Test/shapes.txt", "Test of instance shapes.txt")
 
 
 if __name__ == "__main__":
