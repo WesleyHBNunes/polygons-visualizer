@@ -79,13 +79,18 @@ def main():
     # plot_polygons_from_file_xls("Test/jakobs.xls", "Jakobs1", "Test of instance jakobs.xls")
     # plot_polygons_from_file_xls("Test/jakobs.xls", "Jakobs2", "Test of instance jakobs.xls")
     # plot_polygons_from_file_xls("Test/mao.xls", "Mao", "Test of instance mao.xls")
-    plot_polygons_from_file_xls("Test/marques.xls", "Marques", "Test of instance marques.xls")
+    # plot_polygons_from_file_xls("Test/marques.xls", "Marques", "Test of instance marques.xls")
     # plot_polygons_from_file_xls("Test/dagli.xls", "Dagli", "Test of instance dagli.xls")
+    # plot_polygons_from_file_xls("Test/test_data_irreg.xls", "poly1a", "Test of instance test_data_irreg.xls")
+    # plot_polygons_from_file_xls("Test/test_data_irreg.xls", "poly2b", "Test of instance test_data_irreg.xls")
+    # plot_polygons_from_file_xls("Test/test_data_irreg.xls", "poly3b", "Test of instance test_data_irreg.xls")
+    # plot_polygons_from_file_xls("Test/test_data_irreg.xls", "poly4b", "Test of instance test_data_irreg.xls")
+    # plot_polygons_from_file_xls("Test/test_data_irreg.xls", "poly5b", "Test of instance test_data_irreg.xls")
     # plot_polygons_from_file_txt("Test/shapes.txt", "Test of instance shapes.txt")
     # plot_polygons_from_file_txt("Test/blaz.txt", "Test of instance blaz.txt")
     # plot_polygons_from_file_txt("Test/shirts.txt", "Test of instance shirts.txt")
     # plot_polygons_from_file_txt("Test/swim.txt", "Test of instance swim.txt")
-    # plot_polygons_from_file_txt("Test/trousers.txt", "Test of instance trousers.txt")
+    plot_polygons_from_file_txt("Test/trousers.txt", "Test of instance trousers.txt")
 
 
 if __name__ == "__main__":
