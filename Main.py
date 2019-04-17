@@ -1,7 +1,9 @@
 import random
+
 import numpy as np
-import Visualizer
+
 import File
+import Visualizer
 
 
 def random_polygons(n, title):

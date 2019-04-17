@@ -1,8 +1,7 @@
-import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.patches import Polygon
+import numpy as np
 from matplotlib.collections import PatchCollection
-
+from matplotlib.patches import Polygon
 
 fig, ax = plt.subplots()
 

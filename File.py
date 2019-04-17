@@ -1,6 +1,7 @@
-from pyexcel_xls import get_data
-import Visualizer
 import numpy as np
+from pyexcel_xls import get_data
+
+import Visualizer
 
 # CONSTS
 COLUMN_LINE_WIDTH_DATA = 3
