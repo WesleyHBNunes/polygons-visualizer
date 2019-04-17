@@ -19,26 +19,32 @@ def random_polygons(n, title):
     Visualizer.plot_polygons(array_polygons, title, 1, 1)
 
 
-def polygons_from_file_txt(file_name, title):
+def plot_polygons_from_file_txt(file_name, title):
     file = open(file_name, "r")
     line = file.readline()
+    x_lim = float(line)
+    y_lim = x_lim
+    array_polygons = []
+    amount_polygons = 0
     while line != "#":
-        print(line)
         if line == "QUANTITY":
-            file.readline()
-            amount_polygons = file.readline()
+            amount_polygons = int(file.readline())
             line = amount_polygons
         elif line == "VERTICES (X,Y)":
             line = file.readline()
+            array_points_tuple = []
             while line != "\n":
                 points = line.split()
-                print(points)
+                array_points_tuple.append((float(points[0]), float(points[1])))
                 line = file.readline()
+            for i in range(amount_polygons):
+                array_polygons.append(Visualizer.create_polygon(np.array(array_points_tuple)))
         else:
             line = file.readline().strip()
+    Visualizer.plot_polygons(array_polygons, title, x_lim, y_lim)
 
 
-def polygons_from_file_xls(file_name, sheet, title):
+def plot_polygons_from_file_xls(file_name, sheet, title):
     data = get_data(file_name)
     x_lim = data[sheet][COLUMN_LINE_WIDTH_DATA][COLUMN_LINE_WIDTH_DATA]
     y_lim = data[sheet][COLUMN_LINE_WIDTH_DATA][COLUMN_LINE_WIDTH_DATA]
@@ -64,17 +70,22 @@ def polygons_from_file_xls(file_name, sheet, title):
 
 
 def main():
-    # random_polygons(5, "Test of random polygons")
-    # polygons_from_file_xls("Test/dighe.xls", "Dighe1", "Test of instance Dighe.xls")
-    # polygons_from_file_xls("Test/dighe.xls", "Dighe2", "Test of instance Dighe.xls")
-    # polygons_from_file_xls("Test/albano.xls", "Albano", "Test of instance Albano.xls")
-    # polygons_from_file_xls("Test/fu.xls", "Fu", "Test of instance Fu.xls")
-    # polygons_from_file_xls("Test/han.xls", "Han", "Test of instance Han.xls")
-    # polygons_from_file_xls("Test/jakobs.xls", "Jakobs1", "Test of instance jakobs.xls")
-    # polygons_from_file_xls("Test/jakobs.xls", "Jakobs2", "Test of instance jakobs.xls")
-    # polygons_from_file_xls("Test/mao.xls", "Mao", "Test of instance mao.xls")
-    # polygons_from_file_xls("Test/marques.xls", "Marques", "Test of instance marques.xls")
-    polygons_from_file_txt("Test/shapes.txt", "Test of instance shapes.txt")
+    # random_polygons(10, "Test of random polygons")
+    # plot_polygons_from_file_xls("Test/dighe.xls", "Dighe1", "Test of instance Dighe.xls")
+    # plot_polygons_from_file_xls("Test/dighe.xls", "Dighe2", "Test of instance Dighe.xls")
+    # plot_polygons_from_file_xls("Test/albano.xls", "Albano", "Test of instance Albano.xls")
+    # plot_polygons_from_file_xls("Test/fu.xls", "Fu", "Test of instance Fu.xls")
+    # plot_polygons_from_file_xls("Test/han.xls", "Han", "Test of instance Han.xls")
+    # plot_polygons_from_file_xls("Test/jakobs.xls", "Jakobs1", "Test of instance jakobs.xls")
+    # plot_polygons_from_file_xls("Test/jakobs.xls", "Jakobs2", "Test of instance jakobs.xls")
+    # plot_polygons_from_file_xls("Test/mao.xls", "Mao", "Test of instance mao.xls")
+    plot_polygons_from_file_xls("Test/marques.xls", "Marques", "Test of instance marques.xls")
+    # plot_polygons_from_file_xls("Test/dagli.xls", "Dagli", "Test of instance dagli.xls")
+    # plot_polygons_from_file_txt("Test/shapes.txt", "Test of instance shapes.txt")
+    # plot_polygons_from_file_txt("Test/blaz.txt", "Test of instance blaz.txt")
+    # plot_polygons_from_file_txt("Test/shirts.txt", "Test of instance shirts.txt")
+    # plot_polygons_from_file_txt("Test/swim.txt", "Test of instance swim.txt")
+    # plot_polygons_from_file_txt("Test/trousers.txt", "Test of instance trousers.txt")
 
 
 if __name__ == "__main__":
