@@ -1,0 +1,13 @@
+15
+PIECE 1
+QUANTITY
+4
+NUMBER OF VERTICES
+6
+VERTICES (X,Y)
+ -1   -1
+ -1  1
+ 1   1
+ 1   -1
+
+#

@@ -24,6 +24,7 @@ def polygons_from_xls(file_name, sheet):
                     j = j + 1
                 i = i + 1
                 array_points_tuple = list(zip(array_points_x, array_points_y))
+                array_points_tuple = Polygon.set_points_to_positive(array_points_tuple)
                 array_points_x = []
                 array_points_y = []
                 for _ in range(amount_polygons):
