@@ -17,10 +17,15 @@ def random_polygons(n, title):
 
 
 def main():
+    # Example random polygons
     random_polygons(10, "Test of random polygons")
+
+    # Example using a file test xls
     # limits_xls = File.return_limits_of_board_xls("Test/marques.xls", "Marques")
     # Visualizer.plot_polygons(File.polygons_from_xls("Test/marques.xls", "Marques"), "Test of instance marques.xls",
     #                          limits_xls[0], limits_xls[1])
+
+    # Example using a file test txt
     # limits_txt = File.return_limits_of_board_txt("Test/swim.txt")
     # Visualizer.plot_polygons(File.polygons_from_txt("Test/swim.txt"), "Test of instance swim.txt",
     #                        limits_txt[0], limits_txt[1])
