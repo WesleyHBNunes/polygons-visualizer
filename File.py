@@ -1,7 +1,7 @@
 import numpy as np
 from pyexcel_xls import get_data
 
-import Visualizer
+import Polygon
 
 # CONSTS
 COLUMN_LINE_WIDTH_DATA = 3
@@ -27,7 +27,7 @@ def polygons_from_xls(file_name, sheet):
                 array_points_x = []
                 array_points_y = []
                 for _ in range(amount_polygons):
-                    array_polygons.append(Visualizer.create_polygon(np.array(array_points_tuple)))
+                    array_polygons.append(Polygon.create_polygon(np.array(array_points_tuple)))
     return array_polygons
 
 
@@ -47,8 +47,9 @@ def polygons_from_txt(file_name):
                 points = line.split()
                 array_points_tuple.append((float(points[0]), float(points[1])))
                 line = file.readline()
+            array_points_tuple = Polygon.set_points_to_positive(array_points_tuple)
             for i in range(amount_polygons):
-                array_polygons.append(Visualizer.create_polygon(np.array(array_points_tuple)))
+                array_polygons.append(Polygon.create_polygon(np.array(array_points_tuple)))
         else:
             line = file.readline().strip()
     file.close()

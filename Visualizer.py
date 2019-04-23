@@ -1,14 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.collections import PatchCollection
-from matplotlib.patches import Polygon
 
 fig, ax = plt.subplots()
-
-
-def create_polygon(polygons_points):
-    polygon = Polygon(polygons_points, True)
-    return polygon
 
 
 def plot_polygons(array_polygons, title, x_lim, y_lim):
