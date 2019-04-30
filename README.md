@@ -69,26 +69,3 @@ parameters: polygon_points (array of tuple (x,y), required):
 `
 return: array of tuple (x,y)
 `
-### add_number_axis_x_y
-`
-parameters: polygon (array of typle (x,y)), number_x (float), number_y (float):
-`
-`
-return: array of typle (x,y)
-`
-
-## Functions: file (BottomLeft.py)
-### initial_solution
-`
-parameters: array_polygons (array of tuple (x,y), required):
-`
-`
-return: List of type Polygon()
-`
-### better_initial_solution
-`
-parameters: array_polygons (array of tuple (x,y), required), x_lim (float, required):
-`
-`
-return: List of type Polygon()
-`
