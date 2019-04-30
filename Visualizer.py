@@ -16,8 +16,9 @@ class Visualizer:
 
     def plot_polygons(self):
         colors = 100 * np.random.rand(len(self.__array_polygons))
-        p = PatchCollection(self.__array_polygons, alpha=0.4)
+        p = PatchCollection(self.__array_polygons, alpha=.5)
         p.set_array(np.array(colors))
+        p.set_edgecolor([0, 0, 0])
         self.__ax.set_xlim((0, self.__x_lim))
         self.__ax.set_ylim((0, self.__y_lim))
         self.__ax.set_title(self.__title)
